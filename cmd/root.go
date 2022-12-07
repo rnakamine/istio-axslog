@@ -43,8 +43,8 @@ var rootCmd = &cobra.Command{
 		if err != nil {
 			return err
 		}
-		scanner := bufio.NewScanner(os.Stdin)
 
+		scanner := bufio.NewScanner(os.Stdin)
 		for scanner.Scan() {
 			accessLog, err := p.Parse(scanner.Text())
 			if err != nil {
