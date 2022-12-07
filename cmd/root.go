@@ -23,11 +23,11 @@ package cmd
 
 import (
 	"bufio"
-	"encoding/json"
 	"fmt"
 	"os"
 
 	"github.com/Songmu/go-ltsv"
+	"github.com/goccy/go-json"
 	"github.com/rnakamine/istio-axslog/parser"
 	"github.com/spf13/cobra"
 )
