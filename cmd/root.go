@@ -30,7 +30,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "istio-axslog",
 	Short: "A brief description of your application",
-	Long: "A brief description of your application",
+	Long:  "A brief description of your application",
 }
 
 func Execute() {

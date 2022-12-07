@@ -21,7 +21,7 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/rnakamine/kubebuilder-sample/src/github.com/rnakamine/istio-axslog/cmd"
+import "github.com/rnakamine/istio-axslog/cmd"
 
 func main() {
 	cmd.Execute()
