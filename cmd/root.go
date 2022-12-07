@@ -22,15 +22,55 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"bufio"
+	"encoding/json"
+	"fmt"
 	"os"
 
+	"github.com/Songmu/go-ltsv"
+	"github.com/rnakamine/istio-axslog/parser"
 	"github.com/spf13/cobra"
 )
+
+var format string
 
 var rootCmd = &cobra.Command{
 	Use:   "istio-axslog",
 	Short: "A brief description of your application",
 	Long:  "A brief description of your application",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		p, err := parser.New()
+		if err != nil {
+			return err
+		}
+		scanner := bufio.NewScanner(os.Stdin)
+
+		for scanner.Scan() {
+			accessLog, err := p.Parse(scanner.Text())
+			if err != nil {
+				return err
+			}
+
+			switch format {
+			case "json":
+				out, err := json.Marshal(accessLog)
+				if err != nil {
+					return err
+				}
+				fmt.Fprintf(os.Stdout, string(out))
+			case "ltsv":
+				out, err := ltsv.Marshal(accessLog)
+				if err != nil {
+					return err
+				}
+				fmt.Fprintf(os.Stdout, string(out))
+			default:
+				// error
+			}
+		}
+
+		return nil
+	},
 }
 
 func Execute() {
@@ -41,5 +81,5 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.Flags().StringVarP(&format, "format", "f", "json", "Help message for toggle")
 }
