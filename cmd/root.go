@@ -58,13 +58,13 @@ var rootCmd = &cobra.Command{
 					if err != nil {
 						return err
 					}
-					fmt.Fprint(cmd.OutOrStdout(), string(out))
+					fmt.Fprintf(cmd.OutOrStdout(), "%s\n", string(out))
 				case "ltsv":
 					out, err := ltsv.Marshal(accessLog)
 					if err != nil {
 						return err
 					}
-					fmt.Fprint(cmd.OutOrStdout(), string(out))
+					fmt.Fprintf(cmd.OutOrStdout(), "%s\n", string(out))
 				}
 			}
 		}
