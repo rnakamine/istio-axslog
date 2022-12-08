@@ -44,28 +44,28 @@ var rootCmd = &cobra.Command{
 			return err
 		}
 
-		scanner := bufio.NewScanner(os.Stdin)
+		scanner := bufio.NewScanner(cmd.InOrStdin())
 		for scanner.Scan() {
 			accessLog, err := p.Parse(scanner.Text())
 			if err != nil {
 				return err
 			}
 
-			switch format {
-			case "json":
-				out, err := json.Marshal(accessLog)
-				if err != nil {
-					return err
+			if len(accessLog) > 0 {
+				switch format {
+				case "json":
+					out, err := json.Marshal(accessLog)
+					if err != nil {
+						return err
+					}
+					fmt.Fprint(cmd.OutOrStdout(), string(out))
+				case "ltsv":
+					out, err := ltsv.Marshal(accessLog)
+					if err != nil {
+						return err
+					}
+					fmt.Fprint(cmd.OutOrStdout(), string(out))
 				}
-				fmt.Fprint(cmd.OutOrStdout(), string(out))
-			case "ltsv":
-				out, err := ltsv.Marshal(accessLog)
-				if err != nil {
-					return err
-				}
-				fmt.Fprint(cmd.OutOrStdout(), string(out))
-			default:
-				// error
 			}
 		}
 
