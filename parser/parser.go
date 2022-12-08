@@ -36,7 +36,6 @@ func New() (*Parser, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	return &Parser{g}, nil
 }
 
@@ -45,6 +44,5 @@ func (p *Parser) Parse(line string) (map[string]string, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	return m, nil
 }

@@ -43,14 +43,12 @@ var rootCmd = &cobra.Command{
 		if err != nil {
 			return err
 		}
-
 		scanner := bufio.NewScanner(cmd.InOrStdin())
 		for scanner.Scan() {
 			accessLog, err := p.Parse(scanner.Text())
 			if err != nil {
 				return err
 			}
-
 			if len(accessLog) > 0 {
 				switch format {
 				case "json":
@@ -68,7 +66,6 @@ var rootCmd = &cobra.Command{
 				}
 			}
 		}
-
 		return nil
 	},
 }
