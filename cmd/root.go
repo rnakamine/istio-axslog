@@ -23,6 +23,7 @@ package cmd
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"os"
 
@@ -39,6 +40,9 @@ var rootCmd = &cobra.Command{
 	Short: "A brief description of your application",
 	Long:  "A brief description of your application",
 	RunE: func(cmd *cobra.Command, args []string) error {
+		if format != "json" && format != "ltsv" {
+			return errors.New("unsupported format. supported formats are json, ltsv")
+		}
 		p, err := parser.New()
 		if err != nil {
 			return err
