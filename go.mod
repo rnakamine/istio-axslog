@@ -5,6 +5,7 @@ go 1.19
 require (
 	github.com/Songmu/go-ltsv v0.1.0
 	github.com/goccy/go-json v0.10.0
+	github.com/mitchellh/mapstructure v1.5.0
 	github.com/spf13/cobra v1.6.1
 	github.com/vjeantet/grok v1.0.1
 )
