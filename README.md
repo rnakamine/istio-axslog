@@ -12,7 +12,7 @@ Usage:
 
 Flags:
   -h, --help            help for istio-axslog
-  -o, --output string   output format (default is json) supported formats are json, ltsv (default "json")
+  -o, --output string   output format. supported formats are json, ltsv (default "json")
 ```
 
 Output in json format (default):

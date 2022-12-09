@@ -83,5 +83,5 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().StringVarP(&output, "output", "o", "json", "output format supported formats are json, ltsv")
+	rootCmd.Flags().StringVarP(&output, "output", "o", "json", "output format. supported formats are json, ltsv")
 }
