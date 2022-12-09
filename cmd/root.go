@@ -33,15 +33,16 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var format string
+var output string
 
 var rootCmd = &cobra.Command{
-	Use:   "istio-axslog",
-	Short: "A brief description of your application",
-	Long:  "A brief description of your application",
+	Use:          "istio-axslog",
+	Short:        "istio-axslog is parsed istio-proxy(envoy) access log and output in any format",
+	Long:         `istio-axslog is parsed istio-proxy(envoy) access log and output in any format.`,
+	SilenceUsage: true,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		if format != "json" && format != "ltsv" {
-			return errors.New("unsupported format. supported formats are json, ltsv")
+		if output != "json" && output != "ltsv" {
+			return errors.New("unsupported output format. supported formats are json, ltsv")
 		}
 		p, err := parser.New()
 		if err != nil {
@@ -54,7 +55,7 @@ var rootCmd = &cobra.Command{
 				return err
 			}
 			if len(accessLog) > 0 {
-				switch format {
+				switch output {
 				case "json":
 					out, err := json.Marshal(accessLog)
 					if err != nil {
@@ -82,5 +83,5 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().StringVarP(&format, "format", "f", "json", "Help message for toggle")
+	rootCmd.Flags().StringVarP(&output, "output", "o", "json", "output format (default is json) supported formats are json, ltsv")
 }
