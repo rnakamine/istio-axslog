@@ -6,30 +6,30 @@ import (
 )
 
 type EnvoyAccessLog struct {
-	StartTime                      string `mapstructure:"start_time" json:"start_time,omitempty"`
-	Method                         string `mapstructure:"method" json:"method,omitempty"`
-	Path                           string `mapstructure:"path" json:"path,omitempty"`
-	Protocol                       string `mapstructure:"protocol" json:"protocol,omitempty"`
-	ResponseCode                   string `mapstructure:"response_code" json:"response_code,omitempty"`
-	ResponseFlags                  string `mapstructure:"response_flags" json:"response_flags,omitempty"`
-	ResponseCodeDetails            string `mapstructure:"response_code_details" json:"response_code_details,omitempty"`
-	ConnectionTerminationDetails   string `mapstructure:"connection_termination_details" json:"connection_termination_details,omitempty"`
-	UpstreamTransportFailureReason string `mapstructure:"upstream_transport_failure_reason" json:"upstream_transport_failure_reason,omitempty"`
-	BytesReceived                  string `mapstructure:"bytes_received" json:"bytes_received,omitempty"`
-	BytesSent                      string `mapstructure:"bytes_sent" json:"bytes_sent,omitempty"`
-	Duration                       string `mapstructure:"duration" json:"duration,omitempty"`
-	XEnvoyUpstreamServiceTime      string `mapstructure:"x-envoy-upstream-service-time" json:"x-envoy-upstream-service-time,omitempty"`
-	XForwardedFor                  string `mapstructure:"x-forwarded-for" json:"x-forwarded-for,omitempty"`
-	UserAgent                      string `mapstructure:"user-agent" json:"user-agent,omitempty"`
-	XRequestId                     string `mapstructure:"x-request-id" json:"x-request-id,omitempty"`
-	Authority                      string `mapstructure:"authority" json:"authority,omitempty"`
-	UpstreamHost                   string `mapstructure:"upstream_host" json:"upstream_host,omitempty"`
-	UpstreamCluster                string `mapstructure:"upstream_cluster" json:"upstream_cluster,omitempty"`
-	UpstreamLocalAddress           string `mapstructure:"upstream_local_address" json:"upstream_local_address,omitempty"`
-	DownstreamLocalAddress         string `mapstructure:"downstream_local_address" json:"downstream_local_address,omitempty"`
-	DownstreamRemoteAddress        string `mapstructure:"downstream_remote_address" json:"downstream_remote_address,omitempty"`
-	RequestedServerName            string `mapstructure:"requested_server_name" json:"requested_server_name,omitempty"`
-	RouteName                      string `mapstructure:"route_name" json:"route_name,omitempty"`
+	StartTime                      string `mapstructure:"start_time" json:"start_time,omitempty" ltsv:"start_time"`
+	Method                         string `mapstructure:"method" json:"method,omitempty" ltsv:"method"`
+	Path                           string `mapstructure:"path" json:"path,omitempty" ltsv:"path"`
+	Protocol                       string `mapstructure:"protocol" json:"protocol,omitempty" ltsv:"protocol"`
+	ResponseCode                   string `mapstructure:"response_code" json:"response_code,omitempty" ltsv:"response_code"`
+	ResponseFlags                  string `mapstructure:"response_flags" json:"response_flags,omitempty" ltsv:"response_flags"`
+	ResponseCodeDetails            string `mapstructure:"response_code_details" json:"response_code_details,omitempty" ltsv:"response_code_details"`
+	ConnectionTerminationDetails   string `mapstructure:"connection_termination_details" json:"connection_termination_details,omitempty" ltsv:"connection_termination_details"`
+	UpstreamTransportFailureReason string `mapstructure:"upstream_transport_failure_reason" json:"upstream_transport_failure_reason,omitempty" ltsv:"upstream_transport_failure_reason"`
+	BytesReceived                  string `mapstructure:"bytes_received" json:"bytes_received,omitempty" ltsv:"bytes_received"`
+	BytesSent                      string `mapstructure:"bytes_sent" json:"bytes_sent,omitempty" ltsv:"bytes_sent"`
+	Duration                       string `mapstructure:"duration" json:"duration,omitempty" ltsv:"duration"`
+	XEnvoyUpstreamServiceTime      string `mapstructure:"x-envoy-upstream-service-time" json:"x-envoy-upstream-service-time,omitempty" ltsv:"x-envoy-upstream-service-time"`
+	XForwardedFor                  string `mapstructure:"x-forwarded-for" json:"x-forwarded-for,omitempty" ltsv:"x-forwarded-for"`
+	UserAgent                      string `mapstructure:"user-agent" json:"user-agent,omitempty" ltsv:"user-agent"`
+	XRequestId                     string `mapstructure:"x-request-id" json:"x-request-id,omitempty" ltsv:"x-request-id"`
+	Authority                      string `mapstructure:"authority" json:"authority,omitempty" ltsv:"authority"`
+	UpstreamHost                   string `mapstructure:"upstream_host" json:"upstream_host,omitempty" ltsv:"upstream_host"`
+	UpstreamCluster                string `mapstructure:"upstream_cluster" json:"upstream_cluster,omitempty" ltsv:"upstream_cluster"`
+	UpstreamLocalAddress           string `mapstructure:"upstream_local_address" json:"upstream_local_address,omitempty" ltsv:"upstream_local_address"`
+	DownstreamLocalAddress         string `mapstructure:"downstream_local_address" json:"downstream_local_address,omitempty" ltsv:"downstream_local_address"`
+	DownstreamRemoteAddress        string `mapstructure:"downstream_remote_address" json:"downstream_remote_address,omitempty" ltsv:"downstream_remote_address"`
+	RequestedServerName            string `mapstructure:"requested_server_name" json:"requested_server_name,omitempty" ltsv:"requested_server_name"`
+	RouteName                      string `mapstructure:"route_name" json:"route_name,omitempty" ltsv:"route_name"`
 }
 
 // ref: https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format
