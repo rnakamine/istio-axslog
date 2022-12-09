@@ -1,7 +1,6 @@
 # istio-axslog
 
-istio-axslog is parsed istio-proxy(envoy) access log and output in any format.
-istio-axslog parses the istio-proxy(envoy) access log and outputs it in any format. Logs are parsed based on [Istio / Default access log format](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format).
+istio-axslog is parsed istio-proxy(envoy) access log and output in any format. Logs are parsed based on [Istio / Default access log format](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format).
 
 ## Usage
 ```sh
