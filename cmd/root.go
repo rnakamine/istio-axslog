@@ -54,7 +54,7 @@ var rootCmd = &cobra.Command{
 			if err != nil {
 				return err
 			}
-			if accessLog != nil {
+			if *accessLog != (parser.EnvoyAccessLog{}) {
 				switch output {
 				case "json":
 					out, err := json.Marshal(accessLog)

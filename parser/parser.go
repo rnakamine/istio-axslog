@@ -73,13 +73,13 @@ func (p *Parser) Parse(line string) (*EnvoyAccessLog, error) {
 	if err != nil {
 		return nil, err
 	}
-	if len(m) < 1 {
-		return nil, nil
-	}
 	accessLog := &EnvoyAccessLog{}
+	if len(m) < 1 {
+		return accessLog, nil
+	}
 	err = mapstructure.Decode(m, accessLog)
 	if err != nil {
-		return accessLog, err
+		return nil, err
 	}
 	return accessLog, nil
 }
