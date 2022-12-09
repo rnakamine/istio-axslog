@@ -32,7 +32,8 @@ type EnvoyAccessLog struct {
 	RouteName                      string `mapstructure:"route_name" json:"route_name,omitempty" ltsv:"route_name"`
 }
 
-// ref: https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format
+// Logs are parsed based on Default asccess log format
+// https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format
 var defaultAccessLogFormat = `\[%{TIMESTAMP_ISO8601:start_time}\] ` +
 	`\"%{DATA:method} %{DATA:path} %{DATA:protocol}\" ` +
 	`%{NUMBER:response_code} ` +
