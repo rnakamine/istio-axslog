@@ -17,10 +17,10 @@ type EnvoyAccessLog struct {
 	BytesReceived                  string `json:"bytes_received,omitempty" ltsv:"bytes_received"`
 	BytesSent                      string `json:"bytes_sent,omitempty" ltsv:"bytes_sent"`
 	Duration                       string `json:"duration,omitempty" ltsv:"duration"`
-	X_Envoy_Upstream_Service_Time  string `json:"x_envoy_upstream_service_time,omitempty" ltsv:"x_envoy_upstream_service_time"`
-	X_Forwarded_For                string `json:"x_forwarded_for,omitempty" ltsv:"x_forwarded_for"`
-	User_Agent                     string `json:"user_agent,omitempty" ltsv:"user_agent"`
-	X_Request_Id                   string `json:"x_request_id,omitempty" ltsv:"x_request_id"`
+	XEnvoyUpstreamServiceTime      string `json:"x_envoy_upstream_service_time,omitempty" ltsv:"x_envoy_upstream_service_time"`
+	XForwardedFor                  string `json:"x_forwarded_for,omitempty" ltsv:"x_forwarded_for"`
+	UserAgent                      string `json:"user_agent,omitempty" ltsv:"user_agent"`
+	XRequestId                     string `json:"x_request_id,omitempty" ltsv:"x_request_id"`
 	Authority                      string `json:"authority,omitempty" ltsv:"authority"`
 	UpstreamHost                   string `json:"upstream_host,omitempty" ltsv:"upstream_host"`
 	UpstreamCluster                string `json:"upstream_cluster,omitempty" ltsv:"upstream_cluster"`
@@ -81,10 +81,10 @@ func (p *Parser) Parse(line string) (*EnvoyAccessLog, error) {
 		BytesReceived:                  matches[10],
 		BytesSent:                      matches[11],
 		Duration:                       matches[12],
-		X_Envoy_Upstream_Service_Time:  matches[13],
-		X_Forwarded_For:                matches[14],
-		User_Agent:                     matches[15],
-		X_Request_Id:                   matches[16],
+		XEnvoyUpstreamServiceTime:      matches[13],
+		XForwardedFor:                  matches[14],
+		UserAgent:                      matches[15],
+		XRequestId:                     matches[16],
 		Authority:                      matches[17],
 		UpstreamHost:                   matches[18],
 		UpstreamCluster:                matches[19],
