@@ -14,7 +14,7 @@ Flags:
   -h, --help            help for istio-axslog
   -o, --output string   output format. supported formats are json, ltsv (default "json")
 ```
-Logs can be received from STDIN. Also, the supported output formats are `json`, `ltsv`
+Logs can be received from STDIN. Also, the supported output formats are `json`, `ltsv`.
 
 #### Output in json format (default):
 
