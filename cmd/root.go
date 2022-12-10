@@ -44,10 +44,7 @@ var rootCmd = &cobra.Command{
 		if output != "json" && output != "ltsv" {
 			return errors.New("unsupported output format. supported formats are json, ltsv")
 		}
-		p, err := parser.New()
-		if err != nil {
-			return err
-		}
+		p := parser.New()
 		scanner := bufio.NewScanner(cmd.InOrStdin())
 		for scanner.Scan() {
 			accessLog, err := p.Parse(scanner.Text())

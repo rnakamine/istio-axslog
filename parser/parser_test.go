@@ -25,10 +25,10 @@ var parseTests = []struct {
 			BytesReceived:                  "0",
 			BytesSent:                      "135",
 			Duration:                       "4",
-			XEnvoyUpstreamServiceTime:      "4",
-			XForwardedFor:                  "-",
-			UserAgent:                      "curl/7.73.0-DEV",
-			XRequestId:                     "84961386-6d84-929d-98bd-c5aee93b5c88",
+			X_Envoy_Upstream_Service_Time:  "4",
+			X_Forwarded_For:                "-",
+			User_Agent:                     "curl/7.73.0-DEV",
+			X_Request_Id:                   "84961386-6d84-929d-98bd-c5aee93b5c88",
 			Authority:                      "httpbin:8000",
 			UpstreamHost:                   "10.44.1.27:80",
 			UpstreamCluster:                "outbound|8000||httpbin.foo.svc.cluster.local",
@@ -55,10 +55,10 @@ var parseTests = []struct {
 			BytesReceived:                  "0",
 			BytesSent:                      "135",
 			Duration:                       "3",
-			XEnvoyUpstreamServiceTime:      "1",
-			XForwardedFor:                  "-",
-			UserAgent:                      "curl/7.73.0-DEV",
-			XRequestId:                     "84961386-6d84-929d-98bd-c5aee93b5c88",
+			X_Envoy_Upstream_Service_Time:  "1",
+			X_Forwarded_For:                "-",
+			User_Agent:                     "curl/7.73.0-DEV",
+			X_Request_Id:                   "84961386-6d84-929d-98bd-c5aee93b5c88",
 			Authority:                      "httpbin:8000",
 			UpstreamHost:                   "127.0.0.1:80",
 			UpstreamCluster:                "inbound|8000||",
@@ -77,7 +77,7 @@ var parseTests = []struct {
 }
 
 func TestParse(t *testing.T) {
-	p, _ := New()
+	p := New()
 	for _, tt := range parseTests {
 		t.Run(tt.name, func(t *testing.T) {
 			accessLog, _ := p.Parse(tt.input)
