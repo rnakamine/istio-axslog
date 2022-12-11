@@ -43,6 +43,10 @@ var rootCmd = &cobra.Command{
 	Version:      version.Version,
 	SilenceUsage: true,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		if len(args) > 0 {
+			cmd.Usage()
+			return nil
+		}
 		if output != "json" && output != "ltsv" {
 			return errors.New("unsupported output format. supported formats are json, ltsv")
 		}
