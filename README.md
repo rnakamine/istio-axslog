@@ -1,5 +1,9 @@
 # istio-axslog
 
+[![build](https://github.com/rnakamine/istio-axslog/workflows/build/badge.svg?branch=main)](https://github.com/rnakamine/istio-axslog/actions?workflow=build)
+[![MITLicense](https://img.shields.io/github/license/rnakamine/istio-axslog)](https://github.com/rnakamine/istio-axslog/blob/main/LICENSE)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/rnakamine/istio-axslog)](https://pkg.go.dev/github.com/rnakamine/istio-axslog)
+
 istio-axslog is parsed istio-proxy(envoy) access log and output in any format. Logs are parsed based on [Istio / Default access log format](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format).
 
 ## Install
