@@ -4,13 +4,13 @@ istio-axslog is parsed istio-proxy(envoy) access log and output in any format. L
 
 ## Install
 
-#### homebrew
+### homebrew
 
 ```sh
 $ brew install rnakamine/tap/istio-axslog
 ```
 
-#### manually
+### manually
 
 Download binary from [releases page](https://github.com/rnakamine/istio-axslog/releases)
 
