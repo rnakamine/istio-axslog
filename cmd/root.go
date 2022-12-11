@@ -30,6 +30,7 @@ import (
 	"github.com/Songmu/go-ltsv"
 	"github.com/goccy/go-json"
 	"github.com/rnakamine/istio-axslog/parser"
+	"github.com/rnakamine/istio-axslog/version"
 	"github.com/spf13/cobra"
 )
 
@@ -39,6 +40,7 @@ var rootCmd = &cobra.Command{
 	Use:          "istio-axslog",
 	Short:        "istio-axslog is parsed istio-proxy(envoy) access log and output in any format",
 	Long:         `istio-axslog is parsed istio-proxy(envoy) access log and output in any format.`,
+	Version:      version.Version,
 	SilenceUsage: true,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if output != "json" && output != "ltsv" {
