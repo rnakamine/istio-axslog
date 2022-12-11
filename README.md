@@ -2,6 +2,19 @@
 
 istio-axslog is parsed istio-proxy(envoy) access log and output in any format. Logs are parsed based on [Istio / Default access log format](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format).
 
+## Install
+
+#### homebrew
+
+```sh
+$ brew install rnakamine/tap/istio-axslog
+```
+
+#### manually
+
+Download binary from [releases page](https://github.com/rnakamine/istio-axslog/releases)
+
+
 ## Usage
 ```sh
 $ istio-axslog --help
@@ -13,6 +26,7 @@ Usage:
 Flags:
   -h, --help            help for istio-axslog
   -o, --output string   output format. supported formats are json, ltsv (default "json")
+  -v, --version         version for istio-axslog
 ```
 Logs can be received from STDIN. Also, the supported output formats are `json`, `ltsv`.
 
