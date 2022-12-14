@@ -46,7 +46,7 @@ var logRe = regexp.MustCompile(
 		`(\d+)\s` + // %DURATION%
 		`(\d+)\s` + // %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)%
 		`\"(\S+)\"\s` + // \"%REQ(X-FORWARDED-FOR)%\"
-		`\"(\S+)\"\s` + // \"%REQ(USER-AGENT)%\"
+		`\"(.+)\"\s` + // \"%REQ(USER-AGENT)%\"
 		`\"(\S+)\"\s` + // \"%REQ(X-REQUEST-ID)%\"
 		`\"(\S+)\"\s` + // \"%REQ(:AUTHORITY)%\"
 		`\"((?:\d{1,3}.){3}\d{1,3}:\d+)\"\s` + // \"%UPSTREAM_HOST%\"
